@@ -8,8 +8,6 @@ export type AdvisoryType =
 
 export type AutomationLevel = "Manual" | "Partial" | "Fully Integrated";
 
-export type YesNo = "Yes" | "No";
-
 export type VpdManagement = "Yes" | "No" | "Inconsistently";
 
 export type HvacCategory =
