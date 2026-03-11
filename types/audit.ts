@@ -6,7 +6,7 @@ export type AdvisoryType =
   | "Implementation Advisory"
   | "Exit Strategy Advisory";
 
-export type AutomationLevel = "Manual" | "Partial" | "Fully Integrated";
+export type AutomationLevel = "None" | "Partial" | "Fully Integrated";
 
 export type VpdManagement = "Yes" | "No" | "Inconsistently";
 
@@ -19,8 +19,8 @@ export type NutrientStrategy = "Salt" | "Organic" | "Hybrid";
 
 export type IrrigationMethod =
   | "Hand watering"
-  | "Automated drip"
-  | "Flood and drain"
+  | "Drip irrigation"
+  | "Automated fertigation"
   | "Other";
 
 export type TrimmingMethod =
@@ -73,21 +73,21 @@ export interface AuditFormData {
   };
 
   environmentalControlPlatform: string;
-  automationLevel?: AutomationLevel;
-  vpdManagement?: VpdManagement;
+  automationLevel?: AutomationLevel | "";
+  vpdManagement?: VpdManagement | "";
   hvacType: string;
-  hvacCategory?: HvacCategory;
+  hvacCategory?: HvacCategory | "";
 
-  nutrientStrategy?: NutrientStrategy;
+  nutrientStrategy?: NutrientStrategy | "";
   nutrientCostPerCycle?: number;
   lightingIntensityAutomated: boolean;
   fertigationKpiTracking: boolean;
   integratedEnvironmentalControls: boolean;
-  irrigationMethod?: IrrigationMethod;
+  irrigationMethod?: IrrigationMethod | "";
 
   cultivationHeadcount?: number;
   weeklyLaborHours?: number;
-  trimmingMethod?: TrimmingMethod;
+  trimmingMethod?: TrimmingMethod | "";
 
   dedicatedDryRooms: boolean;
   environmentalControlDuringDry: boolean;
@@ -99,7 +99,7 @@ export interface AuditFormData {
   costPerPoundTracked: boolean;
   costPerPound?: number;
 
-  transactionReadiness?: TransactionReadiness;
+  transactionReadiness?: TransactionReadiness | "";
 }
 
 export interface AuditScoreResult {
