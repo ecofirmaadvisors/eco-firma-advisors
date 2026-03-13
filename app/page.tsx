@@ -82,7 +82,7 @@ function Section({
   className?: string;
 }) {
   return (
-    <section className={`px-6 py-16 md:py-24 ${className}`}>
+    <section className={`px-4 py-16 sm:px-6 md:py-24 ${className}`}>
       <div className="mx-auto max-w-6xl">{children}</div>
     </section>
   );
@@ -121,7 +121,7 @@ function ServiceCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-[#D7E3D2] bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-[#D7E3D2] bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#EEF5E8] text-[#31543A]">
         {icon}
       </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#F4EFE3] text-[#1F3527]">
-      <Section className="bg-[linear-gradient(180deg,#EEF5E8_0%,#F4EFE3_100%)] pt-12 md:pt-16">
+      <Section className="bg-[linear-gradient(180deg,#EEF5E8_0%,#F4EFE3_55%,#F7F2E8_100%)] pt-12 md:pt-16">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <div className="mb-5 inline-flex items-center rounded-full border border-[#D7E3D2] bg-white px-4 py-2 text-sm font-medium text-[#4F6553] shadow-sm">
@@ -145,7 +145,8 @@ export default function HomePage() {
             </div>
 
             <h1 className="max-w-2xl text-4xl font-semibold leading-tight md:text-6xl">
-              Practical advisory for healthier cultivation facilities and smarter operating decisions.
+              Practical advisory for healthier cultivation facilities and smarter
+              operating decisions.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#4F6553]">
@@ -164,16 +165,16 @@ export default function HomePage() {
                 <ClipboardList className="h-4 w-4" />
               </Link>
 
-              <Link
-                href="/contact"
+              <a
+                href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20Inquiry"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#C9D7C5] bg-white px-6 py-3 text-sm font-medium text-[#1F3527] transition hover:bg-[#EEF5E8]"
               >
                 Contact Us
                 <Mail className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
               <Link
                 href="/cultivation-audit/full"
                 className="inline-flex items-center gap-2 text-sm font-medium text-[#31543A] underline underline-offset-4"
@@ -181,6 +182,14 @@ export default function HomePage() {
                 Go to the full cultivation index
                 <ArrowRight className="h-4 w-4" />
               </Link>
+
+              <a
+                href="mailto:jesse@ecofirmaadvisors.com?subject=Consulting%20Inquiry%20for%20Eco%20Firma%20Advisors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#31543A] underline underline-offset-4"
+              >
+                Email Jesse directly
+                <Mail className="h-4 w-4" />
+              </a>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -209,15 +218,36 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-[#D7E3D2] bg-[#EEF5E8] p-6 shadow-lg">
-            <Image
-              src="/logos/efa-hero-banner.png"
-              alt="Eco Firma Advisors banner"
-              width={1600}
-              height={600}
-              className="h-auto w-full object-contain"
-              priority
-            />
+          <div className="relative">
+            <div className="absolute inset-6 rounded-[2.5rem] bg-white/50 blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-[#D7E3D2] bg-[linear-gradient(180deg,rgba(255,255,255,0.9)_0%,rgba(238,245,232,0.95)_45%,rgba(244,239,227,0.98)_100%)] p-8 shadow-[0_20px_60px_rgba(49,84,58,0.10)] md:p-10 lg:p-12">
+              <div className="pointer-events-none absolute inset-x-10 top-6 h-24 rounded-full bg-white/60 blur-2xl" />
+              <div className="pointer-events-none absolute inset-x-12 bottom-8 h-16 rounded-full bg-[#DDEAD8]/60 blur-2xl" />
+
+              <div className="relative flex min-h-[360px] items-center justify-center md:min-h-[460px]">
+                <div className="rounded-full border border-white/80 bg-white/70 p-5 shadow-[0_18px_40px_rgba(49,84,58,0.10)] backdrop-blur-sm md:p-6">
+                  <Image
+                    src="/logos/efa-seal.png"
+                    alt="Eco Firma Advisors seal"
+                    width={900}
+                    height={900}
+                    className="h-auto w-full max-w-[420px] object-contain md:max-w-[500px]"
+                    priority
+                  />
+                </div>
+              </div>
+
+              <div className="mt-4 text-center">
+                <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#5C7A60]">
+                  Eco Firma Advisors
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[#5A6F5E]">
+                  Advisory rooted in operational discipline, healthier plant
+                  environments, and smarter facility decisions.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
@@ -264,18 +294,27 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <ServiceCard icon={<Leaf className="h-5 w-5" />} title="Cultivation Efficiency">
+          <ServiceCard
+            icon={<Leaf className="h-5 w-5" />}
+            title="Cultivation Efficiency"
+          >
             Evaluate room performance, environmental consistency, and workflow
             opportunities that can improve plant health, turnover, and facility
             productivity.
           </ServiceCard>
 
-          <ServiceCard icon={<Zap className="h-5 w-5" />} title="Energy Strategy">
+          <ServiceCard
+            icon={<Zap className="h-5 w-5" />}
+            title="Energy Strategy"
+          >
             Analyze lighting, HVAC, and dehumidification systems to identify
             practical efficiency gains and better infrastructure coordination.
           </ServiceCard>
 
-          <ServiceCard icon={<Factory className="h-5 w-5" />} title="Facility Strategy">
+          <ServiceCard
+            icon={<Factory className="h-5 w-5" />}
+            title="Facility Strategy"
+          >
             Support facility planning, layout decisions, retrofits, and
             operational design as cultivation businesses scale or stabilize.
           </ServiceCard>
@@ -428,13 +467,13 @@ export default function HomePage() {
               <ClipboardList className="h-4 w-4" />
             </Link>
 
-            <Link
-              href="/contact"
+            <a
+              href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20Inquiry"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/15"
             >
               Contact Us
               <Mail className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
 
           <div className="mt-6">

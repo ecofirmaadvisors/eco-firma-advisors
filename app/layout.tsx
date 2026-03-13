@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "./components/MobileNav";
 
 export const metadata: Metadata = {
   title: "Eco Firma Advisors",
@@ -33,9 +34,12 @@ function DesktopNav() {
       <Link href="/insights" className="transition hover:text-[#31543A]">
         Insights
       </Link>
-      <Link href="/contact" className="transition hover:text-[#31543A]">
+      <a
+        href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20General%20Inquiry"
+        className="transition hover:text-[#31543A]"
+      >
         Contact
-      </Link>
+      </a>
       <Link
         href="/cultivation-audit"
         className="rounded-xl bg-[#31543A] px-4 py-2 text-white transition hover:bg-[#27442F]"
@@ -46,74 +50,31 @@ function DesktopNav() {
   );
 }
 
-function MobileNav() {
+function FloatingContactButton() {
   return (
-    <div className="md:hidden">
-      <details className="group relative">
-        <summary className="flex cursor-pointer list-none items-center gap-2 rounded-xl border border-[#C9D8C5] bg-white px-4 py-2 text-sm font-medium text-[#31543A] shadow-sm transition hover:bg-[#F8FBF6]">
-          Menu
-          <span className="text-xs transition group-open:rotate-180">▼</span>
-        </summary>
-
-        <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-64 overflow-hidden rounded-2xl border border-[#D7E3D2] bg-[#F7F3E9] shadow-xl">
-          <nav className="flex flex-col p-2 text-sm font-medium text-[#31543A]">
-            <Link
-              href="/"
-              className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
-            >
-              Home
-            </Link>
-            <Link
-              href="/services"
-              className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
-            >
-              Services
-            </Link>
-            <Link
-              href="/founder"
-              className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
-            >
-              Founder
-            </Link>
-            <Link
-              href="/case-studies"
-              className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
-            >
-              Case Studies
-            </Link>
-            <Link
-              href="/insights"
-              className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
-            >
-              Insights
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
-            >
-              Contact
-            </Link>
-
-            <div className="px-2 py-2">
-              <Link
-                href="/cultivation-audit"
-                className="block rounded-xl bg-[#31543A] px-4 py-3 text-center text-white transition hover:bg-[#27442F]"
-              >
-                Take the Quiz
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </details>
-    </div>
+    <a
+      href={`mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
+        "Eco Firma Advisors Website Inquiry"
+      )}&body=${encodeURIComponent(
+        "Hi Jesse,\n\nI would like to discuss my cultivation facility and learn more about Eco Firma Advisors.\n\nThanks,"
+      )}`}
+      className="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center rounded-full bg-[#31543A] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-[#27442F] sm:bottom-6 sm:right-6"
+      aria-label="Talk With Jesse"
+    >
+      Talk With Jesse
+    </a>
   );
 }
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#D7E3D2] bg-[#F7F3E9]/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-[#D7E3D2] bg-[#F7F3E9]/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center" aria-label="Eco Firma Advisors home">
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label="Eco Firma Advisors home"
+        >
           <Image
             src="/logos/efa-header-lockup-nav.png"
             alt="Eco Firma Advisors"
@@ -137,9 +98,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#F4EFE3] text-[#1F3527] antialiased">
+      <body className="min-h-screen bg-[#F4EFE3] pb-24 text-[#1F3527] antialiased">
         <Nav />
         <main>{children}</main>
+        <FloatingContactButton />
       </body>
     </html>
   );

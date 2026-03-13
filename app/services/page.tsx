@@ -8,12 +8,24 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return (
-    <main className="px-6 py-20">
-      <div className="mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold">Services</h1>
+  const consultationMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
+    "Eco Firma Advisors Services Consultation"
+  )}&body=${encodeURIComponent(
+    "Hi Jesse,\n\nI would like to discuss Eco Firma Advisors services for my cultivation facility.\n\nPlease contact me to discuss next steps.\n\nThanks,"
+  )}`;
 
-        <p className="mt-6 text-gray-600">
+  const infoMailto = `mailto:info@ecofirmaadvisors.com?subject=${encodeURIComponent(
+    "Eco Firma Advisors General Inquiry"
+  )}`;
+
+  return (
+    <main className="px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-4xl">
+        <h1 className="text-4xl font-bold text-[#1F3527] sm:text-5xl">
+          Services
+        </h1>
+
+        <p className="mt-6 text-base leading-8 text-gray-600 sm:text-lg">
           Boutique advisory engagements built to reduce cost per pound,
           improve consistency, and scale production systems.
         </p>
@@ -24,10 +36,12 @@ export default function ServicesPage() {
         </p>
 
         <div className="mt-12 space-y-10">
-          <section className="rounded-2xl border p-8">
-            <h2 className="text-2xl font-semibold">Cultivation Diagnostic</h2>
+          <section className="rounded-2xl border border-[#D7E3D2] bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-[#1F3527]">
+              Cultivation Diagnostic
+            </h2>
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 leading-7 text-gray-600">
               Audit of facility systems, environmental performance, labor
               workflows, SOP structure, and production metrics.
             </p>
@@ -40,18 +54,20 @@ export default function ServicesPage() {
               <li>Clear operational improvement report</li>
             </ul>
 
-            <p className="mt-6 font-semibold">Typical investment: $8K–$20K</p>
+            <p className="mt-6 font-semibold text-[#1F3527]">
+              Typical investment: $8K–$20K
+            </p>
           </section>
 
-          <section className="rounded-2xl border p-8">
-            <h2 className="text-2xl font-semibold">
+          <section className="rounded-2xl border border-[#D7E3D2] bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-[#1F3527]">
               Efficiency Blueprint{" "}
               <span className="font-normal text-gray-500">
                 (Facility redesign, or new construction.)
               </span>
             </h2>
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 leading-7 text-gray-600">
               Strategic roadmap for facility optimization, SOP redesign, KPI
               dashboards, and production cadence.
             </p>
@@ -64,13 +80,17 @@ export default function ServicesPage() {
               <li>KPI dashboard design for leadership teams</li>
             </ul>
 
-            <p className="mt-6 font-semibold">Typical investment: $20K–$50K</p>
+            <p className="mt-6 font-semibold text-[#1F3527]">
+              Typical investment: $20K–$50K
+            </p>
           </section>
 
-          <section className="rounded-2xl border p-8">
-            <h2 className="text-2xl font-semibold">Implementation Advisory</h2>
+          <section className="rounded-2xl border border-[#D7E3D2] bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold text-[#1F3527]">
+              Implementation Advisory
+            </h2>
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 leading-7 text-gray-600">
               Hands-on advisory guiding execution with leadership teams, vendors,
               and cultivation management.
             </p>
@@ -83,13 +103,13 @@ export default function ServicesPage() {
               <li>Ongoing performance monitoring and refinement</li>
             </ul>
 
-            <p className="mt-6 font-semibold">
+            <p className="mt-6 font-semibold text-[#1F3527]">
               Typical engagement: $50K–$100K+
             </p>
           </section>
         </div>
 
-        <section className="mt-16 rounded-2xl border bg-[#f6f3ea] p-8 sm:p-10">
+        <section className="mt-16 rounded-2xl border border-[#D7E3D2] bg-[#f6f3ea] p-8 shadow-sm sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#6b7c65]">
             Next Step
           </p>
@@ -98,19 +118,35 @@ export default function ServicesPage() {
             Discuss Your Facility
           </h2>
 
-          <p className="mt-4 max-w-2xl text-gray-600">
+          <p className="mt-4 max-w-2xl leading-7 text-gray-600">
             Whether you are troubleshooting performance, planning a redesign, or
             building from the ground up, Eco Firma Advisors can help define the
             right path forward.
           </p>
 
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-full bg-[#6b7c65] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={consultationMailto}
+              className="inline-flex items-center justify-center rounded-full bg-[#6b7c65] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Schedule a Consultation
+            </a>
+
+            <Link
+              href="/cultivation-audit"
+              className="inline-flex items-center justify-center rounded-full border border-[#6b7c65] px-6 py-3 text-sm font-semibold text-[#1F3527] transition hover:bg-white"
+            >
+              Take the Short Audit
             </Link>
+          </div>
+
+          <div className="mt-5">
+            <a
+              href={infoMailto}
+              className="text-sm font-medium text-[#31543A] underline underline-offset-4"
+            >
+              General inquiries: info@ecofirmaadvisors.com
+            </a>
           </div>
         </section>
       </div>

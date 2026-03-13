@@ -146,10 +146,22 @@ export default function CultivationAuditPage() {
     setAnswers({});
   }
 
+  const strategyCallMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
+    "Simple Cultivation Audit Strategy Call"
+  )}&body=${encodeURIComponent(
+    "Hi Jesse,\n\nI completed the Simple Cultivation Audit and would like to discuss my operation.\n\nThanks,"
+  )}`;
+
+  const advisorMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
+    `Simple Cultivation Audit Follow Up - Score ${totalScore}/${maxScore}`
+  )}&body=${encodeURIComponent(
+    `Hi Jesse,\n\nI completed the Simple Cultivation Audit.\n\nMy score: ${totalScore}/${maxScore}\nCurrent tier: ${result.label}\nAverage score: ${averageScore}/5\n\nI would like to discuss next steps.\n\nThanks,`
+  )}`;
+
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-emerald-50 to-white">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
             Simple Cultivation Audit
           </p>
@@ -164,17 +176,17 @@ export default function CultivationAuditPage() {
             environmental control, SOP execution, and post-harvest discipline.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={strategyCallMailto}
+              className="rounded-full bg-emerald-700 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-800"
             >
               Schedule a Strategy Call
-            </Link>
+            </a>
 
             <Link
               href="/services"
-              className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition hover:border-zinc-400"
+              className="rounded-full border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-800 transition hover:border-zinc-400"
             >
               Back to Services
             </Link>
@@ -182,7 +194,7 @@ export default function CultivationAuditPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
@@ -294,20 +306,20 @@ export default function CultivationAuditPage() {
                   and operating economics.
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                   <Link
                     href="/cultivation-audit/full"
-                    className="inline-block rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
+                    className="inline-block rounded-full bg-white px-5 py-3 text-center text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
                   >
                     Start Full Audit
                   </Link>
 
-                  <Link
-                    href="/contact"
-                    className="inline-block rounded-full border border-emerald-200 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
+                  <a
+                    href={advisorMailto}
+                    className="inline-block rounded-full border border-emerald-200 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-800"
                   >
                     Talk to an Advisor
-                  </Link>
+                  </a>
                 </div>
               </div>
 

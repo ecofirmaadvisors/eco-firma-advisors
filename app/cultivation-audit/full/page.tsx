@@ -569,7 +569,7 @@ Transaction Readiness: ${data.transactionReadiness || "N/A"}
 Please contact me to review the results and next steps.
   `.trim());
 
-  return `mailto:your@email.com?subject=${subject}&body=${body}`;
+  return `mailto:jesse@ecofirmaadvisors.com?subject=${subject}&body=${body}`;
 }
 
 export default function FullAuditPage() {
@@ -676,7 +676,7 @@ export default function FullAuditPage() {
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-900">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-emerald-50 to-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
             Full Cultivation Audit
           </p>
@@ -691,25 +691,25 @@ export default function FullAuditPage() {
             generate a more serious score and advisory recommendation.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/cultivation-audit"
-              className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition hover:border-zinc-400"
+              className="rounded-full border border-zinc-300 px-6 py-3 text-center text-sm font-semibold text-zinc-800 transition hover:border-zinc-400"
             >
               Back to Simple Audit
             </Link>
 
-            <Link
-              href="/contact"
-              className="rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
+            <a
+              href="mailto:jesse@ecofirmaadvisors.com?subject=Full%20Cultivation%20Audit%20Inquiry"
+              className="rounded-full bg-emerald-700 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-800"
             >
               Talk to an Advisor
-            </Link>
+            </a>
           </div>
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1.25fr_0.75fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.25fr_0.75fr]">
         <form onSubmit={handleSubmit} className="space-y-8">
           <Section
             title="Facility Layout"
@@ -1439,12 +1439,12 @@ export default function FullAuditPage() {
                       Email Results
                     </a>
 
-                    <Link
-                      href="/contact"
+                    <a
+                      href="mailto:info@ecofirmaadvisors.com?subject=Consultation%20Request%20from%20Full%20Cultivation%20Audit"
                       className="inline-block rounded-full border border-emerald-200 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
                     >
                       Schedule a Consultation
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </>

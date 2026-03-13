@@ -1,11 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function FounderPage() {
+  const consultationMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
+    "Eco Firma Advisors Consultation Request"
+  )}&body=${encodeURIComponent(
+    "Hi Jesse,\n\nI would like to discuss my cultivation facility and potential advisory support.\n\nThanks,"
+  )}`;
+
   return (
-    <main className="px-6 py-20">
+    <main className="px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-12 md:grid-cols-[320px_minmax(0,1fr)] md:items-start">
+
           <div className="md:sticky md:top-24">
             <div className="overflow-hidden rounded-3xl border bg-[#f8f5ee]">
               <div className="relative aspect-[4/5] w-full">
@@ -118,52 +124,32 @@ export default function FounderPage() {
                 With more than 26 years of cultivation experience and deep roots
                 in Oregon's cannabis industry, Jesse has spent his career
                 building, operating, and refining indoor cultivation systems.
-                His work has centered on the relationship between environmental
-                control, facility design, crop steering, labor efficiency, and
-                financial performance.
               </p>
 
               <p>
                 Prior to launching Eco Firma Advisors, Jesse co-founded Eco
                 Firma Farms, an indoor cultivation company known for pairing
-                premium product quality with disciplined operations and
-                sustainability-focused thinking. Public industry coverage
-                highlighted Eco Firma Farms for its carbon-neutral positioning,
-                energy efficiency initiatives, and role as a recognized operator
-                in Oregon's regulated market.
+                premium product quality with disciplined operations.
               </p>
 
               <p>
                 At the time of the sale of Eco Firma Farms, the company was
                 producing top-shelf indoor cannabis for under $189 per pound,
-                packaged and ready for sale. That result reflected a core
-                principle Jesse still brings to advisory work today: quality and
-                efficiency do not have to compete when the facility, workflow,
-                and management systems are designed correctly.
+                packaged and ready for sale.
               </p>
 
               <p>
                 Through Eco Firma Advisors, Jesse now helps operators diagnose
                 production bottlenecks, improve cost per pound, redesign
                 underperforming facilities, and build cultivation environments
-                that are easier to manage, scale, and standardize. His work is
-                especially relevant for operators navigating margin pressure,
-                inconsistent output, staffing inefficiencies, or the complexity
-                of a redesign or new construction project.
+                that are easier to manage and scale.
               </p>
 
               <p>
-                His advisory approach is grounded in practical execution rather
-                than theory alone. That means translating cultivation knowledge
-                into operational systems: room flow, harvest cadence,
-                environmental strategy, equipment selection, SOP structure, KPI
-                visibility, and leadership alignment.
-              </p>
-
-              <p>
-                The result is a consulting model built for owners and operators
-                who want a clearer path to premium production, tighter systems,
-                and a cultivation business that is structurally stronger.
+                His advisory approach translates cultivation knowledge into
+                operational systems: room flow, harvest cadence, environmental
+                strategy, equipment selection, SOP structure, KPI visibility,
+                and leadership alignment.
               </p>
             </div>
 
@@ -182,13 +168,20 @@ export default function FounderPage() {
                 strategy for scaling quality profitably.
               </p>
 
-              <div className="mt-8">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-full bg-[#6b7c65] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={consultationMailto}
+                  className="inline-flex items-center justify-center rounded-full bg-[#6b7c65] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
                 >
                   Schedule a Consultation
-                </Link>
+                </a>
+
+                <a
+                  href="mailto:info@ecofirmaadvisors.com"
+                  className="text-sm font-medium text-[#31543A] underline underline-offset-4"
+                >
+                  General inquiries: info@ecofirmaadvisors.com
+                </a>
               </div>
             </section>
           </div>
