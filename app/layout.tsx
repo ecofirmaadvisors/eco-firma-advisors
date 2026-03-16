@@ -34,12 +34,9 @@ function DesktopNav() {
       <Link href="/insights" className="transition hover:text-[#31543A]">
         Insights
       </Link>
-      <a
-        href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20General%20Inquiry"
-        className="transition hover:text-[#31543A]"
-      >
+      <Link href="/contact" className="transition hover:text-[#31543A]">
         Contact
-      </a>
+      </Link>
       <Link
         href="/cultivation-audit"
         className="rounded-xl bg-[#31543A] px-4 py-2 text-white transition hover:bg-[#27442F]"
@@ -52,17 +49,13 @@ function DesktopNav() {
 
 function FloatingContactButton() {
   return (
-    <a
-      href={`mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
-        "Eco Firma Advisors Website Inquiry"
-      )}&body=${encodeURIComponent(
-        "Hi Jesse,\n\nI would like to discuss my cultivation facility and learn more about Eco Firma Advisors.\n\nThanks,"
-      )}`}
+    <Link
+      href="/contact"
       className="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center rounded-full bg-[#31543A] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-[#27442F] sm:bottom-6 sm:right-6"
       aria-label="Talk With Jesse"
     >
       Talk With Jesse
-    </a>
+    </Link>
   );
 }
 
