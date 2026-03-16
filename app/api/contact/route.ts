@@ -12,21 +12,21 @@ export async function POST(req: Request) {
       to: ["jesse@ecofirmaadvisors.com"],
       cc: ["info@ecofirmaadvisors.com"],
       subject: `Eco Firma Advisors Inquiry${company ? ` - ${company}` : ""}`,
-      reply_to: email,
-      text: `
-Name: ${name}
-Company: ${company}
-Email: ${email}
+      replyTo: email || "info@ecofirmaadvisors.com",
+      text: `Name: ${name || "N/A"}
+Company: ${company || "N/A"}
+Email: ${email || "N/A"}
 
 Message:
-${message}
-`,
+${message || "N/A"}`,
     });
 
     return NextResponse.json({ success: true });
-
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ success: false });
+    console.error("Contact form error:", error);
+    return NextResponse.json(
+      { success: false, error: "Failed to send email." },
+      { status: 500 }
+    );
   }
 }
