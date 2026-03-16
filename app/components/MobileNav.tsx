@@ -63,13 +63,13 @@ export default function MobileNav() {
             >
               Insights
             </Link>
-            <a
-              href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20General%20Inquiry"
+            <Link
+              href="/contact"
               onClick={closeMenu}
               className="rounded-xl px-4 py-3 transition hover:bg-[#E9F0E5]"
             >
               Contact
-            </a>
+            </Link>
 
             <div className="px-2 py-2">
               <Link
