@@ -165,13 +165,13 @@ export default function HomePage() {
                 <ClipboardList className="h-4 w-4" />
               </Link>
 
-              <a
-                href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20Inquiry"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#C9D7C5] bg-white px-6 py-3 text-sm font-medium text-[#1F3527] transition hover:bg-[#EEF5E8]"
               >
                 Contact Us
                 <Mail className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
 
             <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
@@ -183,13 +183,13 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
-              <a
-                href="mailto:jesse@ecofirmaadvisors.com?subject=Consulting%20Inquiry%20for%20Eco%20Firma%20Advisors"
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 text-sm font-medium text-[#31543A] underline underline-offset-4"
               >
                 Email Jesse directly
                 <Mail className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -467,13 +467,13 @@ export default function HomePage() {
               <ClipboardList className="h-4 w-4" />
             </Link>
 
-            <a
-              href="mailto:info@ecofirmaadvisors.com?subject=Eco%20Firma%20Advisors%20Inquiry"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/15"
             >
               Contact Us
               <Mail className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="mt-6">
