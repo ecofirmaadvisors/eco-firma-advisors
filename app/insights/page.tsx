@@ -1,13 +1,6 @@
 import Link from "next/link";
 
 export default function InsightsPage() {
-
-  const consultationMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
-    "Eco Firma Advisors Inquiry from Insights Page"
-  )}&body=${encodeURIComponent(
-    "Hi Jesse,\n\nI was reading the Insights page and would like to discuss my cultivation facility.\n\nThanks,"
-  )}`;
-
   const featuredItem = {
     title:
       "How to Operate a More Sustainable and Profitable Cannabis Cultivation Operation",
@@ -114,13 +107,8 @@ export default function InsightsPage() {
   return (
     <main className="bg-[#f7f5ef] px-6 py-20 text-[#1f2937]">
       <div className="mx-auto max-w-6xl">
-
-        {/* HERO */}
-
         <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-
           <div>
-
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5b6b45]">
               Media, Interviews & Industry Coverage
             </p>
@@ -135,11 +123,9 @@ export default function InsightsPage() {
               the operational discipline required to reduce cost per pound
               without sacrificing quality.
             </p>
-
           </div>
 
           <div className="rounded-3xl border border-[#d9d2c3] bg-white p-8 shadow-sm">
-
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5b6b45]">
               Coverage Themes
             </p>
@@ -154,17 +140,11 @@ export default function InsightsPage() {
                 </span>
               ))}
             </div>
-
           </div>
-
         </section>
 
-        {/* FEATURED */}
-
         <section className="mt-16">
-
           <div className="rounded-3xl border border-[#d9d2c3] bg-white p-10 shadow-sm">
-
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5b6b45]">
               Featured Coverage
             </p>
@@ -178,7 +158,6 @@ export default function InsightsPage() {
             </p>
 
             <div className="mt-8">
-
               <a
                 href={featuredItem.url}
                 target="_blank"
@@ -187,25 +166,17 @@ export default function InsightsPage() {
               >
                 {featuredItem.cta}
               </a>
-
             </div>
-
           </div>
-
         </section>
 
-        {/* ARTICLES */}
-
         <section className="mt-16">
-
           <h2 className="text-3xl font-bold">
             Press and industry features
           </h2>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-
             {articles.map((item) => (
-
               <a
                 key={item.title}
                 href={item.url}
@@ -213,7 +184,6 @@ export default function InsightsPage() {
                 rel="noopener noreferrer"
                 className="group block rounded-3xl border border-[#d9d2c3] bg-white p-7 shadow-sm hover:-translate-y-1 hover:shadow-md"
               >
-
                 <span className="text-xs font-semibold uppercase text-[#5b6b45]">
                   {item.category} • {item.source}
                 </span>
@@ -229,33 +199,58 @@ export default function InsightsPage() {
                 <div className="mt-5 text-sm font-semibold text-[#5b6b45]">
                   {item.cta} →
                 </div>
-
               </a>
-
             ))}
-
           </div>
-
         </section>
 
-        {/* CTA */}
+        <section className="mt-16">
+          <h2 className="text-3xl font-bold">
+            Podcasts and conversations
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {media.map((item) => (
+              <a
+                key={item.title}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-3xl border border-[#d9d2c3] bg-white p-7 shadow-sm hover:-translate-y-1 hover:shadow-md"
+              >
+                <span className="text-xs font-semibold uppercase text-[#5b6b45]">
+                  {item.category} • {item.source}
+                </span>
+
+                <h3 className="mt-4 text-xl font-semibold group-hover:text-[#5b6b45]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-[#4b5563]">
+                  {item.excerpt}
+                </p>
+
+                <div className="mt-5 text-sm font-semibold text-[#5b6b45]">
+                  {item.cta} →
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-20">
-
           <div className="rounded-3xl border border-[#d9d2c3] bg-[#eef2e6] p-10">
-
             <h2 className="text-3xl font-bold">
               Strong operators do not guess their way to lower cost per pound.
             </h2>
 
-            <p className="mt-4 text-lg text-[#4b5563] max-w-2xl">
+            <p className="mt-4 max-w-2xl text-lg text-[#4b5563]">
               Eco Firma Advisors works with operators on cultivation
               efficiency, facility optimization, environmental controls,
               operating discipline, and performance alignment.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-
               <Link
                 href="/services"
                 className="rounded-full bg-[#5b6b45] px-6 py-3 text-sm font-semibold text-white hover:bg-[#4d5c3a]"
@@ -263,19 +258,15 @@ export default function InsightsPage() {
                 View Services
               </Link>
 
-              <a
-                href={consultationMailto}
+              <Link
+                href="/contact"
                 className="rounded-full border border-[#5b6b45] px-6 py-3 text-sm font-semibold text-[#5b6b45] hover:bg-white"
               >
                 Contact Eco Firma
-              </a>
-
+              </Link>
             </div>
-
           </div>
-
         </section>
-
       </div>
     </main>
   );
