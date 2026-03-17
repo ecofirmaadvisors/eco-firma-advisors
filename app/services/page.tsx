@@ -8,16 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  const consultationMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
-    "Eco Firma Advisors Services Consultation"
-  )}&body=${encodeURIComponent(
-    "Hi Jesse,\n\nI would like to discuss Eco Firma Advisors services for my cultivation facility.\n\nPlease contact me to discuss next steps.\n\nThanks,"
-  )}`;
-
-  const infoMailto = `mailto:info@ecofirmaadvisors.com?subject=${encodeURIComponent(
-    "Eco Firma Advisors General Inquiry"
-  )}`;
-
   return (
     <main className="px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-4xl">
@@ -125,12 +115,12 @@ export default function ServicesPage() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a
-              href={consultationMailto}
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-[#6b7c65] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Schedule a Consultation
-            </a>
+            </Link>
 
             <Link
               href="/cultivation-audit"
@@ -141,12 +131,12 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-5">
-            <a
-              href={infoMailto}
+            <Link
+              href="/contact"
               className="text-sm font-medium text-[#31543A] underline underline-offset-4"
             >
-              General inquiries: info@ecofirmaadvisors.com
-            </a>
+              General inquiries
+            </Link>
           </div>
         </section>
       </div>
