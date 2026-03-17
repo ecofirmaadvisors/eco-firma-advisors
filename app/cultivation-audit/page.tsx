@@ -146,18 +146,6 @@ export default function CultivationAuditPage() {
     setAnswers({});
   }
 
-  const strategyCallMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
-    "Simple Cultivation Audit Strategy Call"
-  )}&body=${encodeURIComponent(
-    "Hi Jesse,\n\nI completed the Simple Cultivation Audit and would like to discuss my operation.\n\nThanks,"
-  )}`;
-
-  const advisorMailto = `mailto:jesse@ecofirmaadvisors.com?subject=${encodeURIComponent(
-    `Simple Cultivation Audit Follow Up - Score ${totalScore}/${maxScore}`
-  )}&body=${encodeURIComponent(
-    `Hi Jesse,\n\nI completed the Simple Cultivation Audit.\n\nMy score: ${totalScore}/${maxScore}\nCurrent tier: ${result.label}\nAverage score: ${averageScore}/5\n\nI would like to discuss next steps.\n\nThanks,`
-  )}`;
-
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-emerald-50 to-white">
@@ -177,12 +165,12 @@ export default function CultivationAuditPage() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a
-              href={strategyCallMailto}
+            <Link
+              href="/contact"
               className="rounded-full bg-emerald-700 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-800"
             >
               Schedule a Strategy Call
-            </a>
+            </Link>
 
             <Link
               href="/services"
@@ -314,12 +302,12 @@ export default function CultivationAuditPage() {
                     Start Full Audit
                   </Link>
 
-                  <a
-                    href={advisorMailto}
+                  <Link
+                    href="/contact"
                     className="inline-block rounded-full border border-emerald-200 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-emerald-800"
                   >
                     Talk to an Advisor
-                  </a>
+                  </Link>
                 </div>
               </div>
 
